@@ -14,6 +14,7 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     var users = [User]()
+    var selectdItem: User?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +24,13 @@ class ViewController: UIViewController {
 
 
     func addPost(_ sender: UIBarButtonItem) {
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "passSeque" {
+            let detail = segue.destination as! DetailViewController
+            detail.user = selectdItem
+        }
     }
 }
 
@@ -43,7 +51,13 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        selectdItem = users[indexPath.row]
+        return indexPath
+    }
+    
 }
+
 
 extension ViewController {
     func fetchData() {

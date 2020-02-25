@@ -10,10 +10,13 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
-    @IBOutlet weak var titleDetail: UILabel!
+    @IBOutlet weak var titleItem: UILabel!
+    var user: User?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        titleItem.text = user?.email
 
     }
 
