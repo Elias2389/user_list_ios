@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  DetailViewController.swift
 //  UserList
 //
 //  Created by Andres Rivas on 25/02/2020.
@@ -8,13 +8,13 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class DetailViewController: UIViewController {
 
+    @IBOutlet weak var titleDetail: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+
     }
 
-
 }
-
